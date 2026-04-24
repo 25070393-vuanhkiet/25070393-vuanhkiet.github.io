@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Gộp Bài Tập JavaScript</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 10px; }
+        #display { margin-top: 20px; font-size: 20px; }
+    </style>
+
+    <script language="javascript">
+        function tinhTong() {
+            var txta = prompt("Enter number A");
+            var txtb = prompt("Enter number B");
+
+            if(txta == null || txta == "" || isNaN(txta)) {
+                alert("Number A is formatted incorrect");
+            } else if(txtb == null || txtb == "" || isNaN(txtb)) {
+                alert("Number B is formatted incorrect");
+            } else {
+                var result = parseFloat(txta) + parseFloat(txtb);
+                alert("Result:\n" + txta + " + " + txtb + " = " + result);
+            }
+        }
+
+        function kiemTraChanLe() {
+            var txta = prompt("Enter any integer");
+            var display = document.getElementById("display");
+
+            if(txta == null || txta == "" || isNaN(txta)) {
+                display.innerHTML = "<font color='red'>You must enter a number</font>";
+            } else if(txta % 2 == 0) {
+                display.innerHTML = "<font color='green'><b>" + txta + " is an even number</b></font>";
+            } else {
+                display.innerHTML = "<font color='blue'><i>" + txta + " is an odd number</i></font>";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Bài Tập JavaScript </h1>
+    
+    <button onclick="tinhTong()">Bài 1: Tính Tổng</button>
+    <button onclick="kiemTraChanLe()">Bài 2: Kiểm Tra Chẵn Lẻ</button>
+
+    <div id="display"></div>
+
+</body>
+</html>
